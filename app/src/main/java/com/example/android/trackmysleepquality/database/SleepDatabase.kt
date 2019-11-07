@@ -36,7 +36,7 @@ abstract class SleepDatabase : RoomDatabase() {
             synchronized(this){
                 var instance = INSTANCE
 
-                if (instance == null){
+                if(instance == null){
                     instance = Room.databaseBuilder(
                             context.applicationContext,
                             SleepDatabase::class.java,
@@ -45,6 +45,7 @@ abstract class SleepDatabase : RoomDatabase() {
                             .fallbackToDestructiveMigration()
                             .build()
                     INSTANCE = instance
+
                 }
                 return instance
             }
