@@ -42,13 +42,14 @@ class SleepTrackerFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
-        // Get a reference to the binding object and inflate the fragment views.
+        // Get a reference to the binding object and inflate tUtil.inflate(
+        //                inflater, R.layout.fragment_sleep_tracker, conhe fragment views.
         val binding: FragmentSleepTrackerBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_sleep_tracker, container, false)
 
         val application = requireNotNull(this.activity).application
 
-        val dataSource = SleepDatabase.getInstance(application).sleepDatabaseDao
+        val dataSource= SleepDatabase.getInstance(application).sleepDatabaseDao
 
         val viewModelFactory = SleepTrackerViewModelFactory(dataSource, application)
 
